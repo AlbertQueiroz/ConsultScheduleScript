@@ -18,4 +18,5 @@ let date = inputDate()
 
 let result = searchDate(date, schedule)
 
+print(result)
 talk(this: result)
