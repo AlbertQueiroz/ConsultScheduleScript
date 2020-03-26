@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		AECA6827241A5855005CDECD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA6826241A5855005CDECD /* main.swift */; };
+		AED537B7241BB9EF00D058E0 /* readJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED537B6241BB9EF00D058E0 /* readJson.swift */; };
+		AED537C2241BC6E600D058E0 /* schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = AECA682E241A5A21005CDECD /* schedule.json */; };
+		AED537C3241BC6F100D058E0 /* AppResources.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = AED537BC241BC6DA00D058E0 /* AppResources.bundle */; };
+		AEED514E242D438E00249176 /* search.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED514D242D438E00249176 /* search.swift */; };
+		AEED5150242D45F200249176 /* talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED514F242D45F200249176 /* talk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		AECA6821241A5855005CDECD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+				AED537C3241BC6F100D058E0 /* AppResources.bundle in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -25,10 +31,23 @@
 /* Begin PBXFileReference section */
 		AECA6823241A5855005CDECD /* AcademySchedule */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AcademySchedule; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECA6826241A5855005CDECD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AECA682E241A5A21005CDECD /* schedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schedule.json; sourceTree = "<group>"; };
+		AED537B6241BB9EF00D058E0 /* readJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readJson.swift; sourceTree = "<group>"; };
+		AED537BC241BC6DA00D058E0 /* AppResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED537BE241BC6DA00D058E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEED514D242D438E00249176 /* search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = search.swift; sourceTree = "<group>"; };
+		AEED514F242D45F200249176 /* talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AECA6820241A5855005CDECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AED537B9241BC6DA00D058E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				AECA6825241A5855005CDECD /* AcademySchedule */,
+				AED537BD241BC6DA00D058E0 /* AppResources */,
 				AECA6824241A5855005CDECD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				AECA6823241A5855005CDECD /* AcademySchedule */,
+				AED537BC241BC6DA00D058E0 /* AppResources.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +79,20 @@
 			isa = PBXGroup;
 			children = (
 				AECA6826241A5855005CDECD /* main.swift */,
+				AED537B6241BB9EF00D058E0 /* readJson.swift */,
+				AEED514D242D438E00249176 /* search.swift */,
+				AEED514F242D45F200249176 /* talk.swift */,
 			);
 			path = AcademySchedule;
+			sourceTree = "<group>";
+		};
+		AED537BD241BC6DA00D058E0 /* AppResources */ = {
+			isa = PBXGroup;
+			children = (
+				AED537BE241BC6DA00D058E0 /* Info.plist */,
+				AECA682E241A5A21005CDECD /* schedule.json */,
+			);
+			path = AppResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +115,23 @@
 			productReference = AECA6823241A5855005CDECD /* AcademySchedule */;
 			productType = "com.apple.product-type.tool";
 		};
+		AED537BB241BC6DA00D058E0 /* AppResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AED537BF241BC6DA00D058E0 /* Build configuration list for PBXNativeTarget "AppResources" */;
+			buildPhases = (
+				AED537B8241BC6DA00D058E0 /* Sources */,
+				AED537B9241BC6DA00D058E0 /* Frameworks */,
+				AED537BA241BC6DA00D058E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppResources;
+			productName = AppResources;
+			productReference = AED537BC241BC6DA00D058E0 /* AppResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +143,9 @@
 				ORGANIZATIONNAME = "Albert Rayneer";
 				TargetAttributes = {
 					AECA6822241A5855005CDECD = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					AED537BB241BC6DA00D058E0 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -111,16 +164,38 @@
 			projectRoot = "";
 			targets = (
 				AECA6822241A5855005CDECD /* AcademySchedule */,
+				AED537BB241BC6DA00D058E0 /* AppResources */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AED537BA241BC6DA00D058E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED537C2241BC6E600D058E0 /* schedule.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AECA681F241A5855005CDECD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEED514E242D438E00249176 /* search.swift in Sources */,
+				AEED5150242D45F200249176 /* talk.swift in Sources */,
 				AECA6827241A5855005CDECD /* main.swift in Sources */,
+				AED537B7241BB9EF00D058E0 /* readJson.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AED537B8241BC6DA00D058E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +333,34 @@
 			};
 			name = Release;
 		};
+		AED537C0241BC6DA00D058E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AppResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = Schedule.AppResources;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		AED537C1241BC6DA00D058E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AppResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = Schedule.AppResources;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -275,6 +378,15 @@
 			buildConfigurations = (
 				AECA682B241A5855005CDECD /* Debug */,
 				AECA682C241A5855005CDECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AED537BF241BC6DA00D058E0 /* Build configuration list for PBXNativeTarget "AppResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AED537C0241BC6DA00D058E0 /* Debug */,
+				AED537C1241BC6DA00D058E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

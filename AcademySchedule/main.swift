@@ -1,3 +1,5 @@
+#!/usr/bin/swift
+
 //
 //  main.swift
 //  AcademySchedule
@@ -8,5 +10,12 @@
 
 import Foundation
 
-print("Hello, World!")
+let arguments = CommandLine.arguments
 
+var schedule = decodingJson()
+
+let date = inputDate()
+
+let result = searchDate(date, schedule)
+
+talk(this: result)
