@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+//MARK: Dividir Funções
 func searchDate(_ date: [String:String]?,_ schedule: Schedule?) -> String{
     
     guard let date = date else { return "Data inválida" }
@@ -15,18 +17,40 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) -> String{
     
     guard let stringDay = date["day"] else { return "Dia inválido"}
     guard let month = date["month"] else { return "Mês inválido"}
+    let nextMonth = date["nextMonth"] ?? ""
     let day = Int(stringDay)
 
-    let foundMonth = schedule.months.filter { $0.name == month }[0]
+    let foundMonths = schedule.months.filter { $0.name == month || $0.name == nextMonth }
+    var foundEvent: String = ""
     
-    for event in foundMonth.events{
-        if (event.eventDays.filter { $0 == day } != []) {
-            let endIndex = event.eventDays.count-1
-            return ("Ocorrerá: \(event.eventName) que começa no dia \(event.eventDays[0]) de \(month) e termina no dia \(event.eventDays[endIndex]) de \(month)")
+    var firstDay: Int = 0
+    var lastDay: Int = 0
+    
+    
+    
+    var foundNextMonth: Bool = false
+
+    for event in foundMonths[0].events{
+        if ( event.eventDays.filter { $0 == day } != [] ) {
+            let endIndex = event.eventDays.count - 1
+            firstDay = event.eventDays[0]
+            lastDay = event.eventDays[endIndex]
+            foundEvent = event.eventName
+        } else {
+            return "Nenhum evento encontrado nessa data"
         }
     }
-
-    return "Nenhum evento encontrado nessa data"
+    
+    for event in foundMonths[1].events {
+        if event.eventName == foundEvent {
+            let endIndex = event.eventDays.count - 1
+            lastDay = event.eventDays[endIndex]
+            foundNextMonth = true
+        }
+    }
+    
+    let next = foundNextMonth ? nextMonth : month
+    
+    return ("Ocorrerá: \(foundEvent) que começa no dia \(firstDay) de \(month) e termina no dia \(lastDay) de \(next)")
+    
 }
-
-

@@ -10,8 +10,6 @@
 
 import Foundation
 
-let arguments = CommandLine.arguments
-
 var schedule = readJson()
 
 let input = inputDate()

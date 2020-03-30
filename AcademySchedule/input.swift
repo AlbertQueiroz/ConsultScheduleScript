@@ -9,6 +9,7 @@
 import Foundation
 
 func inputDate() -> String?{
+    let arguments = CommandLine.arguments
     var date: String? = nil
     if arguments.count > 1 {
         date = arguments[1]
@@ -29,17 +30,18 @@ func readDate(date: String?) -> [String:String]? {
 
     let day: String = String(splitedDate[0])
     var month: String = String(splitedDate[1])
+    var nextMonth: String
 
     switch month {
-        case "02": month = "fevereiro"
-        case "03": month = "março"
-        case "04": month = "abril"
-        case "05": month = "maio"
-        case "06": month = "junho"
+    case "02": month = "fevereiro"; nextMonth = "março"
+    case "03": month = "março"; nextMonth = "abril"
+    case "04": month = "abril"; nextMonth = "maio"
+    case "05": month = "maio"; nextMonth = "junho"
+    case "06": month = "junho"; nextMonth = ""
         default: return nil
     }
     
-    let dateDict = ["day": day, "month": month]
+    let dateDict = ["day": day, "month": month, "nextMonth": nextMonth]
 
     return dateDict
 }
