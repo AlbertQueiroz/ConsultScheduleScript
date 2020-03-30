@@ -23,7 +23,7 @@ struct Event: Codable {
 }
 
 
-func readJson() -> Data? {
+func readJson() -> Schedule? {
     
     let currentDirectory = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
     let bundleURL = URL(fileURLWithPath: "AppResources.bundle", relativeTo: currentDirectory)
@@ -32,12 +32,17 @@ func readJson() -> Data? {
     guard let jsonFile = bundle?.url(forResource: "schedule", withExtension: "json"),
         let data = try? Data(contentsOf: jsonFile) else { return nil }
 //        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else { return nil }
-    return data
+    if let scheduleData = decodingJson(data: data) {
+        return scheduleData
+    } else {
+        print("Não foi possível ler o arquivo JSON")
+        return nil
+    }
 }
 
 
-func decodingJson() -> Schedule?{
-    let jsonData = readJson()
+func decodingJson(data: Data?) -> Schedule?{
+    let jsonData = data
     let decoder = JSONDecoder()
     
     guard let data = jsonData else { return nil }

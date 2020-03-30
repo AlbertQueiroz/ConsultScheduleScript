@@ -12,11 +12,13 @@ import Foundation
 
 let arguments = CommandLine.arguments
 
-var schedule = decodingJson()
+var schedule = readJson()
 
-let date = inputDate()
+let input = inputDate()
 
-let result = searchDate(date, schedule)
+let foundDate = readDate(date: input)
+
+let result = searchDate(foundDate, schedule)
 
 print(result)
 talk(this: result)
