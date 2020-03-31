@@ -24,6 +24,17 @@ func inputDate() -> String?{
     return date
 }
 
+func currentDate() -> String {
+    let calendar = Calendar.current
+    //separa o dia de acordo com o calendario atual e transforma em string
+    let currentDay = String(calendar.component(.day, from: Date()))
+    var currentMonth = String(calendar.component(.month, from: Date()))
+    //adiciona o zero
+    currentMonth.count == 1 ? currentMonth = "0\(currentMonth)": nil
+    let date = "\(currentDay)/\(currentMonth)"
+    return date
+}
+
 func readDate(date: String?) -> [String:String]? {
 
     guard let date = date else {return nil}

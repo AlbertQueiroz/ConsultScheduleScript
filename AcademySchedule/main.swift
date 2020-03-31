@@ -14,7 +14,7 @@ var running = true
 while(running){
     menu()
 }
-var schedule = readJson()
+
 
 //let input = inputDate()
 //
