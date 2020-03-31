@@ -26,25 +26,39 @@ func menu(){
     if let choice = readLine(){
         //escolhas do menu
         switch choice{
+            
         case "0":
             print("Saindo")
             running = false
+            
         case "1":
             let foundDate = readDate(date: currentDate())
-            let result = searchDate(foundDate, schedule)
-            print(result)
-            talk(this: result)
+            do {
+                let result = try searchDate(foundDate, schedule)
+                print(result)
+//                talk(this: result)
+            } catch {
+                print(error)
+            }
+            
         case "2":
             print("duracao challenge")
+            
         case "3":
             //pesquisa de acordo com a entrada do usuário
             let input = inputDate()
             let foundDate = readDate(date: input)
-            let result = searchDate(foundDate, schedule)
-            print(result)
-            talk(this: result)
+            do{
+                let result = try searchDate(foundDate, schedule)
+                print(result)
+//                talk(this: result)
+            } catch {
+              print(error)
+            }
+            
         case "4":
-            print("Admin")
+            print("Eventos do mês")
+            
         default:
             menu()
             

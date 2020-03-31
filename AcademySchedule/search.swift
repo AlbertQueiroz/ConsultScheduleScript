@@ -9,25 +9,32 @@
 
 import Foundation
 
+enum SearchError: Error {
+    case InvalidDate
+    case InvalidSchedule
+    case InvalidDay
+    case InvalidMonth
+    case NoEventFound
+}
+
 
 //MARK: Dividir Funções
-func searchDate(_ date: [String:String]?,_ schedule: Schedule?) -> String{
+func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Any] {
     
-    guard let date = date else { return "Data inválida" }
-    guard let schedule = schedule else { return "Calendário Inválido" }
+    guard let date = date else { throw SearchError.InvalidDate }
+    guard let schedule = schedule else { throw SearchError.InvalidSchedule }
     
-    guard let stringDay = date["day"] else { return "Dia inválido"}
-    guard let month = date["month"] else { return "Mês inválido"}
+    guard let stringDay = date["day"] else { throw SearchError.InvalidDay }
+    guard let month = date["month"] else { throw SearchError.InvalidMonth }
     let nextMonth = date["nextMonth"] ?? ""
     let day = Int(stringDay)
+    
     //filtrar do json o mês inserido e o mês seguinte
     let foundMonths = schedule.months.filter { $0.name == month || $0.name == nextMonth }
     var foundEvent: String = ""
     
     var firstDay: Int = 0
     var lastDay: Int = 0
-    
-    
     
     var foundNextMonth: Bool = false
     
@@ -39,7 +46,7 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) -> String{
             lastDay = event.eventDays[endIndex]
             foundEvent = event.eventName
         } else {
-            return "Nenhum evento encontrado nessa data"
+            throw SearchError.NoEventFound
         }
     }
     //Verifica se há continuação do evento no mês seguinte
@@ -53,7 +60,9 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) -> String{
     }
     //Verifica se houve evento no mês seguinte ou não
     let next = foundNextMonth ? nextMonth : month
+    //Salva a duração do evento
+    let duration = lastDay - firstDay
     
-    return ("Ocorrerá: \(foundEvent) que começa no dia \(firstDay) de \(month) e termina no dia \(lastDay) de \(next)")
+    return [foundEvent, firstDay, month, lastDay, next, duration]
     
 }
