@@ -9,14 +9,13 @@
 //
 
 import Foundation
-
-var schedule = readJson()
-
-let input = inputDate()
-
-let foundDate = readDate(date: input)
-
-let result = searchDate(foundDate, schedule)
-
-print(result)
-talk(this: result)
+menu()
+//var schedule = readJson()
+//
+//let input = inputDate()
+//
+//let foundDate = readDate(date: input)
+//
+//let result = searchDate(foundDate, schedule)
+//print(result)
+//talk(this: result)
