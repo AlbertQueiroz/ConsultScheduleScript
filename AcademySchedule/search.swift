@@ -19,7 +19,7 @@ enum SearchError: Error {
 
 
 //MARK: Dividir Funções
-func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Any] {
+func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [String:Any] {
     
     guard let date = date else { throw SearchError.InvalidDate }
     guard let schedule = schedule else { throw SearchError.InvalidSchedule }
@@ -63,6 +63,6 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Any] 
     //Salva a duração do evento
     let duration = lastDay - firstDay
     
-    return [foundEvent, firstDay, month, lastDay, next, duration]
+    return ["event": foundEvent,"firstDay": firstDay,"month": month,"lastDay": lastDay,"nextMonth": next,"eventDuration": duration]
     
 }

@@ -20,6 +20,9 @@ func todayDate() -> String {
     return date
 }
 
+
+
+
 func menu(){
     print ("Bem vindo! Hoje é: \(todayDate()) \n Selecione a opção desejada: \n 1 - Ver programacao Academy do dia \n 2 - Ver duracao do evento atual \n 3 - Pesquisar por uma data específica \n 4 - Mostrar lista de eventos do mês \n 0 - Sair")
     
@@ -33,14 +36,7 @@ func menu(){
             
         case "1":
             let foundDate = readDate(date: currentDate())
-            do {
-                let result = try searchDate(foundDate, schedule)
-                print(result)
-//                talk(this: result)
-            } catch {
-                print(error)
-            }
-            
+            showResult(date: foundDate)
         case "2":
             print("duracao challenge")
             
@@ -48,14 +44,7 @@ func menu(){
             //pesquisa de acordo com a entrada do usuário
             let input = inputDate()
             let foundDate = readDate(date: input)
-            do{
-                let result = try searchDate(foundDate, schedule)
-                print(result)
-//                talk(this: result)
-            } catch {
-              print(error)
-            }
-            
+            showResult(date: foundDate)
         case "4":
             print("Eventos do mês")
             
