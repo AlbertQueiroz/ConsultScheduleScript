@@ -18,11 +18,14 @@ func todayDate() -> String {
     return date
 }
 func menu(){
-    let schedule = readJson()
-    print ("Bem vindo!\n Hoje é: \(todayDate()) \n 1 - ver programacao do dia \n 2 - ver duracao challenge \n 3 - pesquisar por dia \n 4 - admin")
+    print ("Bem vindo! Hoje é: \(todayDate()) \n Selecione a opção desejada: \n 1 - Ver programacao Academy do dia \n 2 - Ver duracao do evento atual \n 3 - Pesquisar por uma data específica \n 4 - Mostrar lista de eventos do mês \n 0 - Sair")
+    
     if let choice = readLine(){
         //escolhas do menu
         switch choice{
+        case "0":
+            print("Saindo")
+            running = false
         case "1":
             let calendar = Calendar.current
             //separa o dia de acordo com o calendario atual e transforma em string

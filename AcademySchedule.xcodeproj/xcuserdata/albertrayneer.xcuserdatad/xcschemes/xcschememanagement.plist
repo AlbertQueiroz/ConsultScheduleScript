@@ -12,7 +12,7 @@
 		<key>AppResources.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>JSONResource.xcscheme_^#shared#^_</key>
 		<dict>
@@ -33,6 +33,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>AECA6822241A5855005CDECD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AED537BB241BC6DA00D058E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

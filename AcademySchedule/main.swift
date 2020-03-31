@@ -9,9 +9,13 @@
 //
 
 import Foundation
-menu()
-//var schedule = readJson()
-//
+var running = true
+
+while(running){
+    menu()
+}
+var schedule = readJson()
+
 //let input = inputDate()
 //
 //let foundDate = readDate(date: input)
@@ -19,4 +23,3 @@ menu()
 //let result = searchDate(foundDate, schedule)
 //print(result)
 //talk(this: result)
-print("oi")
