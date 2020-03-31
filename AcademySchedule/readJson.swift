@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//Estruturas para manipular os objetos do cronograma
 struct Schedule: Codable {
     let months: [Month]
 }
@@ -22,14 +22,16 @@ struct Event: Codable {
     let eventDays: [Int]
 }
 
-
+//Ler o json
 func readJson() -> Schedule? {
     
     let currentDirectory = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+    //atribuindo o bundle criado manualmente ao bundleURL
     let bundleURL = URL(fileURLWithPath: "AppResources.bundle", relativeTo: currentDirectory)
     let bundle = Bundle(url: bundleURL)
-    
+    //desempacotando o json
     guard let jsonFile = bundle?.url(forResource: "schedule", withExtension: "json"),
+        //transformando em dado
         let data = try? Data(contentsOf: jsonFile) else { return nil }
 //        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else { return nil }
     if let scheduleData = decodingJson(data: data) {
@@ -40,7 +42,7 @@ func readJson() -> Schedule? {
     }
 }
 
-
+//decodificando o json de dado para objeto
 func decodingJson(data: Data?) -> Schedule?{
     let jsonData = data
     let decoder = JSONDecoder()
