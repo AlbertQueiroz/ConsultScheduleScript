@@ -8,13 +8,12 @@
 
 import Foundation
 
+//Cria uma instancia do calendario
 let schedule = readJson()
 
+//Recebe a data em forma de dicionario e mostra todas as informações sobre ela
 func showResult(date: [String:String]?) {
-    
-    
     do{
-
         let result = try searchDate(date, schedule)
         if let event = result["event"], let duration = result["eventDuration"], let firstDay = result["firstDay"], let month = result["month"], let lastDay = result["lastDay"], let nextMonth = result["nextMonth"] {
             let stringResult = "Ocorrerá \(event) que irá durar \(duration) dias, começando no dia \(firstDay) de \(month) e terminando no dia \(lastDay) de \(nextMonth)"
@@ -22,7 +21,6 @@ func showResult(date: [String:String]?) {
         } else {
             talk(this: "Não foi possível encontrar um evento nessa data")
         }
-        
     } catch SearchError.InvalidDate{
         talk(this: "Data inválida")
     } catch SearchError.InvalidDay {
@@ -38,6 +36,7 @@ func showResult(date: [String:String]?) {
     }
     
 }
+
 //pega o mês atual de acordo com o calendário e lista os eventos do mês
 func monthEvents() throws {
     let calendar = Calendar.current

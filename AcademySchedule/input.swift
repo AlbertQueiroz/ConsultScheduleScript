@@ -9,6 +9,7 @@
 
 import Foundation
 
+//Recebe a data inserida pelo usuario
 func inputDate() -> String?{
     print("Insira a data para consultar o calendario (DD/MM): ")
     if let inputDate = readLine() {
@@ -30,14 +31,14 @@ func currentDate() -> String {
 func readDate(date: String?) -> [String:String]? {
 
     guard let date = date else {return nil}
-    //retira a /  e separa a string em um array
+    //retira a / e separa a string em um array
     let splitedDate = date.split{$0 == "/"}
 
     let day: String = String(splitedDate[0])
     var month: String = String(splitedDate[1])
     let intMonth = Int(month)
     var nextMonth = String(intMonth! + 1)
-    //transforma a entrada no mês
+    //transforma a entrada no nome do mês
     month = convertMonth(month: month)!
     nextMonth = convertMonth(month: nextMonth)!
     
@@ -46,6 +47,7 @@ func readDate(date: String?) -> [String:String]? {
     return dateDict
 }
 
+//Converte o mês de numero para string
 func convertMonth(month: String) -> String? {
     switch Int(month) {
     case 2: return  "fevereiro"

@@ -18,9 +18,10 @@ enum SearchError: Error {
 }
 
 
-//MARK: Dividir Funções
+//Procura pela data inserida no calendario e retorna todas as informações sobre ela
 func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [String:Any] {
     
+    //Desempacotando todas as variaveis de entrada
     guard let date = date else { throw SearchError.InvalidDate }
     guard let schedule = schedule else { throw SearchError.InvalidSchedule }
     
@@ -32,12 +33,14 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
     //filtrar do json o mês inserido e o mês seguinte
     let foundMonths = schedule.months.filter { $0.name == month || $0.name == nextMonth }
     var foundEvent: String = ""
-    
+    //Primeiro e ultimo dia do evento
     var firstDay: Int = 0
     var lastDay: Int = 0
     
+    //Indica se o evento continua no proximo mês
     var foundNextMonth: Bool = false
     
+    //Busca o evento referente a data inserida
     for event in foundMonths[0].events{
         //Filtra se no dia digitado há evento
         if ( event.eventDays.filter { $0 == day } != [] ) {
@@ -58,7 +61,7 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
             foundNextMonth = true
         }
     }
-    //Verifica se houve evento no mês seguinte ou não
+    //Verifica se houve evento no mês seguinte ou não e guarda o mês em uma constante
     let next = foundNextMonth ? nextMonth : month
     //Salva a duração do evento
     let duration = lastDay - firstDay

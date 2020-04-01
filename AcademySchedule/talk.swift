@@ -9,6 +9,7 @@
 
 import Foundation
 
+//Fala e printa um determinado texto
 func talk(this string: String, voice: String = "Luciana") {
 
     print(string)
