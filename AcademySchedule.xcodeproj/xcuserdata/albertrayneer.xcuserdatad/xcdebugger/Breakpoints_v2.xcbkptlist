@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "99FDB108-79D7-4FD0-862B-1CEFB321B167"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB33FDBD-1C76-4FD7-8005-29015C6A381F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AcademySchedule/search.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "searchDate(_:_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "FB33FDBD-1C76-4FD7-8005-29015C6A381F - 26f91a804e33ba98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AcademySchedule.searchDate(Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, Swift.Optional&lt;AcademySchedule.Schedule&gt;) throws -&gt; Swift.Dictionary&lt;Swift.String, Any&gt;"
+                  moduleName = "AcademySchedule"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/albertrayneer/Documents/Code/AcademyScheduleScript/AcademySchedule/search.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "2451">
+               </Location>
+               <Location
+                  uuid = "FB33FDBD-1C76-4FD7-8005-29015C6A381F - 366f7560f5da98b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int) -&gt; Swift.Bool in AcademySchedule.searchDate(Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, Swift.Optional&lt;AcademySchedule.Schedule&gt;) throws -&gt; Swift.Dictionary&lt;Swift.String, Any&gt;"
+                  moduleName = "AcademySchedule"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/albertrayneer/Documents/Code/AcademyScheduleScript/AcademySchedule/search.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD9C55F5-2DC3-4C80-A09F-24706981D381"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AcademySchedule/search.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "searchDate(_:_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
