@@ -8,6 +8,8 @@
 
 import Foundation
 
+let schedule = readJson()
+
 func showResult(date: [String:String]?) {
     
     do{
@@ -21,8 +23,16 @@ func showResult(date: [String:String]?) {
     
 }
 
-func monthEvents() {
+func monthEvents() throws {
     let calendar = Calendar.current
     let currentMonth = String(calendar.component(.month, from: Date()))
-    print(currentMonth)
+    let monthName = convertMonth(month: currentMonth)
+    
+    guard let month = (schedule?.months.filter { $0.name == monthName }[0]) else { throw SearchError.InvalidMonth }
+    
+    print("O que acontecerá nesse mês:")
+    for event in month.events{
+        print(event.eventName)
+    }
+    
 }

@@ -10,8 +10,6 @@
 import Foundation
 
 
-let schedule = readJson()
-
 func todayDate() -> String {
     //formata a data
     let format = DateFormatter()
@@ -21,10 +19,8 @@ func todayDate() -> String {
 }
 
 
-
-
 func menu(){
-    print ("Bem vindo! Hoje é: \(todayDate()) \n Selecione a opção desejada: \n 1 - Ver programacao Academy do dia \n 2 - Ver duracao do evento atual \n 3 - Pesquisar por uma data específica \n 4 - Mostrar lista de eventos do mês \n 0 - Sair")
+    print ("Selecione a opção desejada: \n 1 - Ver programacao Academy do dia \n 2 - Ver duracao do evento atual \n 3 - Pesquisar por uma data específica \n 4 - Mostrar lista de eventos do mês \n 0 - Sair")
     
     if let choice = readLine(){
         //escolhas do menu
@@ -39,18 +35,27 @@ func menu(){
             showResult(date: foundDate)
         case "2":
             let foundDate = readDate(date: currentDate())
-            print("O evento irá durar ")
+            do {
+                let during = try searchDate(foundDate, schedule)["eventDuration"]
+                print("O evento atual irá durar \(during) dias")
+            } catch {
+                print("Não há nenhum evento ocorrendo na data atual!")
+            }
+            
         case "3":
             //pesquisa de acordo com a entrada do usuário
             let input = inputDate()
             let foundDate = readDate(date: input)
             showResult(date: foundDate)
-        case "4":
-            monthEvents()
             
+        case "4":
+            do {
+                try monthEvents()
+            } catch {
+                print("Não há eventos nesse mês")
+            }
         default:
             menu()
-            
         }
     }
 }

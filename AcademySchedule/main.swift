@@ -9,10 +9,14 @@
 //
 
 import Foundation
+
 var running = true
+
+print("Bem vindo! Hoje é: \(todayDate())")
 
 while(running){
     menu()
+    sleep(5)
 }
 
 
