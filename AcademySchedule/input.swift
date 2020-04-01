@@ -28,9 +28,8 @@ func currentDate() -> String {
     let calendar = Calendar.current
     //separa o dia de acordo com o calendario atual e transforma em string
     let currentDay = String(calendar.component(.day, from: Date()))
-    var currentMonth = String(calendar.component(.month, from: Date()))
-    //adiciona o zero
-    currentMonth.count == 1 ? currentMonth = "0\(currentMonth)": nil
+    let currentMonth = String(calendar.component(.month, from: Date()))
+    
     let date = "\(currentDay)/\(currentMonth)"
     return date
 }
@@ -43,18 +42,24 @@ func readDate(date: String?) -> [String:String]? {
 
     let day: String = String(splitedDate[0])
     var month: String = String(splitedDate[1])
-    var nextMonth: String
+    let intMonth = Int(month)
+    var nextMonth = String(intMonth! + 1)
     //transforma a entrada no mês
-    switch month {
-    case "02": month = "fevereiro"; nextMonth = "março"
-    case "03": month = "março"; nextMonth = "abril"
-    case "04": month = "abril"; nextMonth = "maio"
-    case "05": month = "maio"; nextMonth = "junho"
-    case "06": month = "junho"; nextMonth = ""
-        default: return nil
-    }
+    month = convertMonth(month: month)!
+    nextMonth = convertMonth(month: nextMonth)!
     
     let dateDict = ["day": day, "month": month, "nextMonth": nextMonth]
 
     return dateDict
+}
+
+func convertMonth(month: String) -> String? {
+    switch Int(month) {
+    case 2: return  "fevereiro"
+    case 3: return  "março"
+    case 4: return  "abril"
+    case 5: return  "maio"
+    case 6: return "junho"
+    default: return nil
+    }
 }

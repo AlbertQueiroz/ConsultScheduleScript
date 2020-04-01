@@ -38,15 +38,15 @@ func menu(){
             let foundDate = readDate(date: currentDate())
             showResult(date: foundDate)
         case "2":
-            print("duracao challenge")
-            
+            let foundDate = readDate(date: currentDate())
+            print("O evento irá durar ")
         case "3":
             //pesquisa de acordo com a entrada do usuário
             let input = inputDate()
             let foundDate = readDate(date: input)
             showResult(date: foundDate)
         case "4":
-            print("Eventos do mês")
+            monthEvents()
             
         default:
             menu()
