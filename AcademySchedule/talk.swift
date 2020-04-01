@@ -10,6 +10,8 @@ import Foundation
 
 func talk(this string: String, voice: String = "Luciana") {
 
+    print(string)
+    
     let task = Process()
     task.launchPath = "/usr/bin/say"
     task.arguments = [string, "-v", voice]

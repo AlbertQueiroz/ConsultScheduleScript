@@ -11,7 +11,7 @@ import Foundation
 func inputDate() -> String?{
     print("Insira a data para consultar o calendario (DD/MM): ")
     if let inputDate = readLine() {
-        date = inputDate
+        let date = inputDate
     }
     return date
 }
