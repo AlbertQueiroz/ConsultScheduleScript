@@ -48,6 +48,8 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
             firstDay = event.eventDays[0]
             lastDay = event.eventDays[endIndex]
             foundEvent = event.eventName
+            //Soma com a duração do evento
+            durationEvent += event.eventDays.count
             break
         } else {
             continue
