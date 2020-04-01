@@ -15,7 +15,7 @@
                 "eventDays": [14]},
             {"eventName": "Perfis Cognitivos",
                 "eventDays": [17]},
-            {"eventName": "Carnaval",
+            {"eventName": "Feriado: carnaval",
                 "eventDays": [24,25,26]},
             {"eventName": "Nano What's Design",
                 "eventDays": [27,28]}
@@ -23,7 +23,19 @@
     {"name":"março",
         "events":[
             {"eventName": "Nano What's Design",
-                "eventDays": [2,3,4,5]}
+                "eventDays": [2,3,4,5]},
+            {"eventName": "ProDay",
+                "eventDays": [6]},
+            {"eventName": "Nano Swift",
+                "eventDays": [9,10,11,12,13,16,17,18,23,24]},
+            {"eventName": "Feriado: São José",
+                "eventDays": [19,20]},
+            {"eventName": "Feriado: Data Magna",
+                "eventDays": [25]},
+            {"eventName": "FunDay",
+                "eventDays": [26]},
+            {"eventName": "Nano CV",
+                "eventDays": [27,30,31]},
         ]},
     {"name":"abril",
         "events":[
