@@ -16,14 +16,5 @@ print("Bem vindo! Hoje é: \(todayDate())")
 
 while(running){
     menu()
-    sleep(5)
+    sleep(2)
 }
-
-
-//let input = inputDate()
-//
-//let foundDate = readDate(date: input)
-//
-//let result = searchDate(foundDate, schedule)
-//print(result)
-//talk(this: result)

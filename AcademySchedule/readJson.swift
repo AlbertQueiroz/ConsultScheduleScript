@@ -5,7 +5,6 @@
 //  Created by Albert Rayneer on 13/03/20.
 //  Copyright © 2020 Albert Rayneer. All rights reserved.
 //
-//print("oi")
 
 import Foundation
 //Estruturas para manipular os objetos do cronograma

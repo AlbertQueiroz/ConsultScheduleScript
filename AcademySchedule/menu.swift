@@ -5,7 +5,6 @@
 //  Created by Cecilia Soares on 31/03/20.
 //  Copyright © 2020 Albert Rayneer. All rights reserved.
 //
-//print("oi")
 
 import Foundation
 
@@ -20,7 +19,7 @@ func todayDate() -> String {
 
 
 func menu(){
-    print ("Selecione a opção desejada: \n 1 - Ver programacao Academy do dia \n 2 - Ver duracao do evento atual \n 3 - Pesquisar por uma data específica \n 4 - Mostrar lista de eventos do mês \n 0 - Sair")
+    print ("Selecione a opção desejada: \n 1 - Ver programacao Academy de hoje \n 2 - Ver duracao do evento atual \n 3 - Pesquisar por uma data específica \n 4 - Mostrar lista de eventos do mês \n 0 - Sair")
     
     if let choice = readLine(){
         //escolhas do menu
@@ -37,7 +36,7 @@ func menu(){
             let foundDate = readDate(date: currentDate())
             do {
                 let during = try searchDate(foundDate, schedule)["eventDuration"]
-                print("O evento atual irá durar \(during) dias")
+                print("O evento atual irá durar \(during!) dias")
             } catch {
                 print("Não há nenhum evento ocorrendo na data atual!")
             }
