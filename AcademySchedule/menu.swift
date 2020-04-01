@@ -27,6 +27,7 @@ func menu(){
             
         case "0":
             print("Saindo")
+            talk(this: "Saindo")
             running = false
             
         case "1":
@@ -37,8 +38,10 @@ func menu(){
             do {
                 let during = try searchDate(foundDate, schedule)["eventDuration"]
                 print("O evento atual irá durar \(during!) dias")
+                talk(this: "O evento atual irá durar \(during!) dias")
             } catch {
                 print("Não há nenhum evento ocorrendo na data atual!")
+                talk(this: "Não há nenhum evento ocorrendo na data atual!")
             }
             
         case "3":
@@ -52,6 +55,7 @@ func menu(){
                 try monthEvents()
             } catch {
                 print("Não há eventos nesse mês")
+                talk(this: "Não há eventos nesse mês")
             }
         default:
             menu()

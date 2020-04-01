@@ -9,16 +9,9 @@
 import Foundation
 
 func inputDate() -> String?{
-    //opção de dar entrada da data pelo terminal
-    let arguments = CommandLine.arguments
-    var date: String? = nil
-    if arguments.count > 1 {
-        date = arguments[1]
-    } else {
-        print("Insira a data para consultar o calendario (DD/MM): ")
-        if let inputDate = readLine() {
-            date = inputDate
-        }
+    print("Insira a data para consultar o calendario (DD/MM): ")
+    if let inputDate = readLine() {
+        date = inputDate
     }
     return date
 }

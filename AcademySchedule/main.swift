@@ -14,7 +14,20 @@ var running = true
 
 print("Bem vindo! Hoje é: \(todayDate())")
 
-while(running){
-    menu()
-    sleep(2)
+let arguments = CommandLine.arguments
+var date: String? = nil
+
+if arguments.count > 1 {
+    let inputDate = arguments[1]
+    let date = readDate(date: inputDate)
+    showResult(date: date)
+} else {
+    
+    while(running){
+        menu()
+        sleep(2)
+    }
+
+
 }
+
