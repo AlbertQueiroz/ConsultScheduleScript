@@ -14,7 +14,6 @@ func showResult(date: [String:String]?) {
     
     
     do{
-
         let result = try searchDate(date, schedule)
         if let event = result["event"], let duration = result["eventDuration"], let firstDay = result["firstDay"], let month = result["month"], let lastDay = result["lastDay"], let nextMonth = result["nextMonth"] {
             let stringResult = "Ocorrerá \(event) que irá durar \(duration) dias, começando no dia \(firstDay) de \(month) e terminando no dia \(lastDay) de \(nextMonth)"

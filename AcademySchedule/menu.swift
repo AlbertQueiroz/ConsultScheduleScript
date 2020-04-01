@@ -24,7 +24,7 @@ func menu(){
     if let choice = readLine(){
         //escolhas do menu
         switch choice{
-            
+        
         case "0":
             talk(this: "Saindo")
             running = false

@@ -61,7 +61,7 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
     //Verifica se houve evento no mês seguinte ou não
     let next = foundNextMonth ? nextMonth : month
     //Salva a duração do evento
-    var duration = lastDay - firstDay
+    let duration = lastDay - firstDay
     
     return ["event": foundEvent,"firstDay": firstDay,"month": month,"lastDay": lastDay,"nextMonth": next,"eventDuration": duration]
     

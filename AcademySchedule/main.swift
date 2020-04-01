@@ -27,7 +27,5 @@ if arguments.count > 1 {
         menu()
         sleep(2)
     }
-
-
 }
 
