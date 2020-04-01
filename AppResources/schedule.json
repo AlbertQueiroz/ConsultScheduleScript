@@ -24,7 +24,7 @@
         "events":[
             {"eventName": "Nano What's Design",
                 "eventDays": [2,3,4,5]},
-            {"eventName": "ProDay",
+            {"eventName": "Pro Day",
                 "eventDays": [6]},
             {"eventName": "Nano Swift",
                 "eventDays": [9,10,11,12,13,16,17,18,23,24]},
@@ -32,7 +32,7 @@
                 "eventDays": [19,20]},
             {"eventName": "Feriado: Data Magna",
                 "eventDays": [25]},
-            {"eventName": "FunDay",
+            {"eventName": "Fun Day",
                 "eventDays": [26]},
             {"eventName": "Nano CV",
                 "eventDays": [27,30,31]},
@@ -62,8 +62,23 @@
         ]},
     {"name":"junho",
         "events":[
-            {"eventName": "CBL",
-                "eventDays": [26,27,28,29,30]}
+            {"eventName": "Mini Challenge",
+                "eventDays": [1,2,3,4,5,8,9,10]},
+            {"eventName": "Feriado: Corpus Christi",
+                "eventDays": [11]},
+            {"eventName": "Pro Day",
+                "eventDays": [12]},
+            {"eventName": "Nano Criatividade",
+                "eventDays": [15,16,17,18]},
+            {"eventName": "Fun Day",
+                "eventDays": [19]},
+            {"eventName": "Bridge",
+                "eventDays": [22,23,24,25]},
+            {"eventName": "Feedback do semestre",
+                "eventDays": [24,27,28,29,30]},
+            {"eventName": "Recesso",
+                "eventDays": [29]},
         ]}
+
 ]
 }
