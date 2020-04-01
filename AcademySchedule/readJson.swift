@@ -6,6 +6,7 @@
 //  Copyright © 2020 Albert Rayneer. All rights reserved.
 //
 
+
 import Foundation
 //Estruturas para manipular os objetos do cronograma
 struct Schedule: Codable {

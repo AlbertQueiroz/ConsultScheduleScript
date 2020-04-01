@@ -6,6 +6,7 @@
 //  Copyright © 2020 Albert Rayneer. All rights reserved.
 //
 
+
 import Foundation
 
 func talk(this string: String, voice: String = "Luciana") {
