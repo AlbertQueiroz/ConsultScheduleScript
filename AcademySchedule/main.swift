@@ -16,6 +16,6 @@ print("Bem vindo! Hoje é: \(todayDate())")
 
 while(running){
     menu()
-    sleep(5)
+    sleep(2)
 }
 

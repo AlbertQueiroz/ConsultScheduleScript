@@ -17,8 +17,18 @@ func showResult(date: [String:String]?) {
         let stringResult = "Ocorrerá \(result["event"]!) que irá durar \(result["eventDuration"]!) dias, começando no dia \(result["firstDay"]!) de \(result["month"]!) e terminando no dia \(result["lastDay"]!) de \(result["nextMonth"]!)"
         print(stringResult)
         talk(this: stringResult)
+    } catch SearchError.InvalidDate{
+        print("Data inválida")
+    } catch SearchError.InvalidDay {
+        print("Dia Inválido")
+    } catch SearchError.InvalidMonth {
+        print("Mês Inválido")
+    } catch SearchError.InvalidSchedule {
+        print("Calendário Inválido")
+    } catch SearchError.NoEventFound {
+        print("Nenhuma evento encontrado nessa data")
     } catch {
-      print(error)
+        print("Erro inexperado: \(error)")
     }
     
 }
