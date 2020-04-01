@@ -62,14 +62,16 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
     }
     
     //Verifica se há continuação do evento no mês seguinte
-    for event in foundMonths[1].events {
-        if event.eventName == foundEvent {
-            let endIndex = event.eventDays.count - 1
-            //Atribui o ultimo dia do evento do mês seguinte
-            lastDay = event.eventDays[endIndex]
-            foundNextMonth = true
-            //Soma com a duração do evento
-            durationEvent += event.eventDays.count
+    if foundMonths.count > 1 {
+        for event in foundMonths[1].events {
+            if event.eventName == foundEvent {
+                let endIndex = event.eventDays.count - 1
+                //Atribui o ultimo dia do evento do mês seguinte
+                lastDay = event.eventDays[endIndex]
+                foundNextMonth = true
+                //Soma com a duração do evento
+                durationEvent += event.eventDays.count
+            }
         }
     }
     //Verifica se houve evento no mês seguinte ou não e guarda o mês em uma constante
