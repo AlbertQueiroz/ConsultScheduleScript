@@ -12,9 +12,9 @@ import Foundation
 func inputDate() -> String?{
     print("Insira a data para consultar o calendario (DD/MM): ")
     if let inputDate = readLine() {
-        let date = inputDate
+        return inputDate
     }
-    return date
+    return nil
 }
 
 func currentDate() -> String {
