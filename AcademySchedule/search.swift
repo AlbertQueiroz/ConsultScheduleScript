@@ -39,7 +39,7 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
     
     //Indica se o evento continua no proximo mês
     var foundNextMonth: Bool = false
-    
+    var durationEvent: Int = 0
     //Busca o evento referente a data inserida
     for event in foundMonths[0].events{
         //Filtra se no dia digitado há evento
@@ -48,6 +48,8 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
             firstDay = event.eventDays[0]
             lastDay = event.eventDays[endIndex]
             foundEvent = event.eventName
+            //Salva a duração do evento
+            durationEvent += event.eventDays.count
         } else {
             throw SearchError.NoEventFound
         }
@@ -59,13 +61,13 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
             //Atribui o ultimo dia do evento do mês seguinte
             lastDay = event.eventDays[endIndex]
             foundNextMonth = true
+            //Soma com a duração do evento
+            durationEvent += event.eventDays.count
         }
     }
     //Verifica se houve evento no mês seguinte ou não e guarda o mês em uma constante
     let next = foundNextMonth ? nextMonth : month
-    //Salva a duração do evento
-    let duration = lastDay - firstDay
     
-    return ["event": foundEvent,"firstDay": firstDay,"month": month,"lastDay": lastDay,"nextMonth": next,"eventDuration": duration]
+    return ["event": foundEvent,"firstDay": firstDay,"month": month,"lastDay": lastDay,"nextMonth": next,"eventDuration": durationEvent]
     
 }
