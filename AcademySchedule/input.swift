@@ -37,7 +37,7 @@ func readDate(date: String?) -> [String:String]? {
     let day: String = String(splitedDate[0])
     var month: String = String(splitedDate[1])
     let intMonth = Int(month)
-    var nextMonthNumber = String(intMonth! + 1)
+    let nextMonthNumber = String(intMonth! + 1)
     //transforma a entrada no nome do mês
     month = convertMonth(month: month)!
     let nextMonth: String = convertMonth(month: nextMonthNumber) ?? ""
