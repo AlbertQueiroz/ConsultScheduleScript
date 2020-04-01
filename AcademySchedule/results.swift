@@ -18,15 +18,25 @@ func showResult(date: [String:String]?) {
         print(stringResult)
         talk(this: stringResult)
     } catch SearchError.InvalidDate{
-        print("Data inválida")
+        let phrase = "Data inválida"
+        print(phrase)
+        talk(this: phrase)
     } catch SearchError.InvalidDay {
-        print("Dia Inválido")
+        let phrase = "Dia Inválido"
+        print(phrase)
+        talk(this: phrase)
     } catch SearchError.InvalidMonth {
-        print("Mês Inválido")
+        let phrase = "Mês Inválido"
+        print(phrase)
+        talk(this: phrase)
     } catch SearchError.InvalidSchedule {
-        print("Calendário Inválido")
+        let phrase = "Calendário Inválido"
+        print(phrase)
+        talk(this: phrase)
     } catch SearchError.NoEventFound {
-        print("Nenhuma evento encontrado nessa data")
+        let phrase = "Nenhuma evento encontrado nessa data"
+        print(phrase)
+        talk(this: phrase)
     } catch {
         print("Erro inexperado: \(error)")
     }
@@ -40,7 +50,8 @@ func monthEvents() throws {
     
     guard let month = (schedule?.months.filter { $0.name == monthName }[0]) else { throw SearchError.InvalidMonth }
     
-    print("O que acontecerá nesse mês:")
+    print("O que ocorrerá nesse mês:")
+    talk(this: "O que ocorrerá nesse mês")
     for event in month.events{
         print(event.eventName)
     }
