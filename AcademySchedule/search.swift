@@ -48,10 +48,17 @@ func searchDate(_ date: [String:String]?,_ schedule: Schedule?) throws -> [Strin
             firstDay = event.eventDays[0]
             lastDay = event.eventDays[endIndex]
             foundEvent = event.eventName
+            break
         } else {
-            throw SearchError.NoEventFound
+            continue
         }
     }
+    
+    //Lança um erro se nenhum evento for encontrado
+    if foundEvent == "" {
+        throw SearchError.NoEventFound
+    }
+    
     //Verifica se há continuação do evento no mês seguinte
     for event in foundMonths[1].events {
         if event.eventName == foundEvent {

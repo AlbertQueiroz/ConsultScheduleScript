@@ -1,13 +1,29 @@
 {"months":[
     {"name":"fevereiro",
         "events":[
+            {"eventName": "Onboarding",
+                "eventDays": [3,4,5]},
+            {"eventName": "Visita Danilo e LEGO Tower",
+                "eventDays": [6]},
+            {"eventName": "I Love Apple",
+                "eventDays": [7]},
             {"eventName": "CBL",
-                "eventDays": [6,7,8,9,10]}
+                "eventDays": [10,11,12,18,19,20,21]},
+            {"eventName": "Workshop Rebeca",
+                "eventDays": [13]},
+            {"eventName": "Pefis Motivacionais",
+                "eventDays": [14]},
+            {"eventName": "Perfis Cognitivos",
+                "eventDays": [17]},
+            {"eventName": "Carnaval",
+                "eventDays": [24,25,26]},
+            {"eventName": "Nano What's Design",
+                "eventDays": [27,28]}
         ]},
     {"name":"março",
         "events":[
-            {"eventName": "CBL",
-                "eventDays": [11,12,13,14,15]}
+            {"eventName": "Nano What's Design",
+                "eventDays": [2,3,4,5]}
         ]},
     {"name":"abril",
         "events":[
