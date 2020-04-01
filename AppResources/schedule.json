@@ -51,8 +51,14 @@
         ]},
     {"name":"maio",
         "events":[
-            {"eventName": "CBL",
-                "eventDays": [21,22,23,24,25]}
+            {"eventName": "Feriado: Dia do Trabalho",
+                "eventDays": [1]},
+            {"eventName": "Nano Gerenciamento de grupo",
+                "eventDays": [4,5,6,7]},
+            {"eventName": "WWDC Slot",
+                "eventDays": [8,11,12,13,14]},
+            {"eventName": "Mini Challenge",
+                "eventDays": [15,18,19,20,21,25,26,27,28,29]}, 
         ]},
     {"name":"junho",
         "events":[
