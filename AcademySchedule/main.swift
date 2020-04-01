@@ -19,11 +19,3 @@ while(running){
     sleep(5)
 }
 
-
-//let input = inputDate()
-//
-//let foundDate = readDate(date: input)
-//
-//let result = searchDate(foundDate, schedule)
-//print(result)
-//talk(this: result)

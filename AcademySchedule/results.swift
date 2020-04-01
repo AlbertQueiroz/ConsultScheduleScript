@@ -22,7 +22,7 @@ func showResult(date: [String:String]?) {
     }
     
 }
-
+//pega o mês atual de acordo com o calendário e lista os eventos do mês
 func monthEvents() throws {
     let calendar = Calendar.current
     let currentMonth = String(calendar.component(.month, from: Date()))
