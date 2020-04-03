@@ -1,5 +1,8 @@
 # ConsultScheduleScript
 
+<img width="694" alt="Captura de Tela 2020-04-03 às 10 23 36" src="https://user-images.githubusercontent.com/43816241/78365375-65fedd80-7595-11ea-9dbb-ae9e44053d49.png">
+
+
 ## O que é?
 
 Um Script simples que permite consultar um cronograma de maneira rápida. Agora ficou mais fácil de se encontrar no meio das tasks do dia-a-dia.
@@ -18,6 +21,11 @@ Apague o nome do exec do diretorio e aperte enter
 $ ./AcademySchedule 
 E agora é só ser feliz
 ```
+### Exemplo:
+<img width="606" alt="Captura de Tela 2020-04-03 às 10 18 58" src="https://user-images.githubusercontent.com/43816241/78365045-e3761e00-7594-11ea-8073-1b0757638aca.png">
+
+<img width="571" alt="Captura de Tela 2020-04-03 às 10 24 42" src="https://user-images.githubusercontent.com/43816241/78365351-5c757580-7595-11ea-9813-aeec36140d80.png">
+
 
 ## Funcionalidades
 * Ver a programação de hoje
